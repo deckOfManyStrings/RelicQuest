@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc0miabbh42rw"]
+
+[ext_resource type="Script" path="res://scene/hub/MainHub.gd" id="1_l2h6t"]
+
+[node name="MainHub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l2h6t")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HubUI" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="HubUI"]
+layout_mode = 2
+text = "Prepare for Adventure"
+
+[node name="ClassSelection" type="VBoxContainer" parent="HubUI"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HubUI/ClassSelection"]
+layout_mode = 2
+text = "Select Your Class"
+
+[node name="ClassOptions" type="HBoxContainer" parent="HubUI/ClassSelection"]
+layout_mode = 2
+
+[node name="ClassDescription" type="Label" parent="HubUI/ClassSelection"]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="QuestSelection" type="VBoxContainer" parent="HubUI"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HubUI/QuestSelection"]
+layout_mode = 2
+text = "Select Your Quest"
+
+[node name="QuestOptions" type="HBoxContainer" parent="HubUI/QuestSelection"]
+layout_mode = 2
+
+[node name="QuestDescription" type="Label" parent="HubUI/QuestSelection"]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="EmbarkButton" type="Button" parent="HubUI"]
+layout_mode = 2
+text = "Embark"
+
+[node name="BackButton" type="Button" parent="HubUI"]
+layout_mode = 2
+text = "Back"
