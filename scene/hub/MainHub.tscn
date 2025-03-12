@@ -55,7 +55,6 @@ layout_mode = 2
 
 [node name="QuestDescription" type="Label" parent="HubUI/QuestSelection"]
 layout_mode = 2
-autowrap_mode = 2
 
 [node name="EmbarkButton" type="Button" parent="HubUI"]
 layout_mode = 2

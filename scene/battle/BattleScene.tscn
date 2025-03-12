@@ -1,0 +1,277 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbrbi50ad5ywe"]
+
+[ext_resource type="Script" path="res://scene/battle/BattleScene.gd" id="1_c7r5t"]
+
+[node name="BattleScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c7r5t")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="BattleUI" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="EnemyPanel" type="Panel" parent="BattleUI"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="BattleUI/EnemyPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.5
+offset_right = 63.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Enemy Name"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="ColorRect" parent="BattleUI/EnemyPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7, 0.3, 0.3, 1)
+
+[node name="HPBar" type="ProgressBar" parent="BattleUI/EnemyPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -50.0
+offset_right = -100.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+value = 100.0
+
+[node name="HPLabel" type="Label" parent="BattleUI/EnemyPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -50.0
+offset_right = -10.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaggerBar" type="ProgressBar" parent="BattleUI/EnemyPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -25.0
+offset_right = -100.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.8, 0.65, 0, 1)
+value = 25.0
+
+[node name="StaggerLabel" type="Label" parent="BattleUI/EnemyPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -25.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Stagger: 25%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BattleLog" type="TextEdit" parent="BattleUI"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/background_color = Color(0.1, 0.1, 0.15, 1)
+theme_override_colors/font_readonly_color = Color(0.8, 0.8, 0.8, 1)
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="MainPanels" type="HBoxContainer" parent="BattleUI"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlayerPanel" type="Panel" parent="BattleUI/MainPanels"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClassLabel" type="Label" parent="BattleUI/MainPanels/PlayerPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.5
+offset_right = 63.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Player Class"
+horizontal_alignment = 1
+
+[node name="HPBar" type="ProgressBar" parent="BattleUI/MainPanels/PlayerPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -25.0
+offset_right = 170.0
+offset_bottom = -5.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+value = 100.0
+
+[node name="HPLabel" type="Label" parent="BattleUI/MainPanels/PlayerPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 175.0
+offset_top = -25.0
+offset_right = 250.0
+offset_bottom = 1.0
+grow_vertical = 2
+text = "100/100"
+vertical_alignment = 1
+
+[node name="MPBar" type="ProgressBar" parent="BattleUI/MainPanels/PlayerPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = 5.0
+offset_right = 170.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+value = 100.0
+
+[node name="MPLabel" type="Label" parent="BattleUI/MainPanels/PlayerPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 175.0
+offset_top = 5.0
+offset_right = 250.0
+offset_bottom = 31.0
+grow_vertical = 2
+text = "50/50"
+vertical_alignment = 1
+
+[node name="RelicsPanel" type="Panel" parent="BattleUI/MainPanels"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="BattleUI/MainPanels/RelicsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.5
+offset_right = 63.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Active Relics"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleUI/MainPanels/RelicsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActionPanel" type="Panel" parent="BattleUI"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="BattleUI/ActionPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.5
+offset_top = 5.0
+offset_right = 63.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Actions"
+horizontal_alignment = 1
+
+[node name="ActionButtons" type="HBoxContainer" parent="BattleUI/ActionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
